@@ -1,4 +1,5 @@
 import { Calendar, Clock, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function NewsCard({ news }) {
   // Format tanggal ke format Indonesia
@@ -31,9 +32,9 @@ export default function NewsCard({ news }) {
         </div>
         <h3 className="font-bold text-lg mb-2 line-clamp-2">{news.title}</h3>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">{news.summary}</p>
-        <a href={`#/news/${news.id}`} className="text-blue-700 font-medium hover:underline text-sm">
+        <Link to={`/news/${news.id}`} className="text-blue-700 font-medium hover:underline text-sm">
           Baca selengkapnya →
-        </a>
+        </Link>
       </div>
     </article>
   );
